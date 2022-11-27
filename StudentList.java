@@ -10,11 +10,13 @@ public class StudentList {
 			return;
 		}
 
+		Constants obj = new Constants();
+
 		// Every operation requires us to load the student list.
-		String fileContents = LoadData("students.txt");
+		String fileContents = LoadData(Constants.StudentList);
 
 		// Check arguments
-		if (args[0].equals("a")) {
+		if (args[0].equals(obj.ShowAll)) {
 
 			System.out.println("Loading data ...");
 
@@ -31,7 +33,7 @@ public class StudentList {
 
 		}
 
-		else if (args[0].equals("r")) {
+		else if (args[0].equals(obj.ShowRandom)) {
 
 			System.out.println("Loading data ...");
 
@@ -47,7 +49,7 @@ public class StudentList {
 
 		}
 
-		else if (args[0].contains("+")) {
+		else if (args[0].contains(obj.AddEntry)) {
 
 			System.out.println("Loading data ...");
 
@@ -69,7 +71,7 @@ public class StudentList {
 
 		}
 
-		else if (args[0].contains("?")) {
+		else if (args[0].contains(obj.FindEntry)) {
 
 			System.out.println("Loading data ...");
 
@@ -94,7 +96,7 @@ public class StudentList {
 
 		}
 
-		else if (args[0].contains("c")) {
+		else if (args[0].contains(obj.ShowCount)) {
 
 			System.out.println("Loading data ...");
 
