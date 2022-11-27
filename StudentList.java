@@ -10,12 +10,13 @@ public class StudentList {
 			return;
 		}
 
+		// Create a new objects for constant class
 		Constants obj = new Constants();
 
 		// Every operation requires us to load the student list.
 		String fileContents = LoadData(Constants.StudentList);
 
-		// Check arguments
+		// Check arguments of a
 		if (args[0].equals(obj.ShowAll)) {
 
 			System.out.println("Loading data ...");
@@ -33,6 +34,7 @@ public class StudentList {
 
 		}
 
+		// find random student from file
 		else if (args[0].equals(obj.ShowRandom)) {
 
 			System.out.println("Loading data ...");
@@ -49,6 +51,7 @@ public class StudentList {
 
 		}
 
+		// Add a another student in a file
 		else if (args[0].contains(obj.AddEntry)) {
 
 			System.out.println("Loading data ...");
@@ -71,6 +74,7 @@ public class StudentList {
 
 		}
 
+		// Find a student with search operation
 		else if (args[0].contains(obj.FindEntry)) {
 
 			System.out.println("Loading data ...");
@@ -99,6 +103,7 @@ public class StudentList {
 
 		}
 
+		// logic operation
 		else if (args[0].contains(obj.ShowCount)) {
 
 			System.out.println("Loading data ...");
@@ -130,6 +135,7 @@ public class StudentList {
 		}
 	}
 
+	// Refactors duplicate file
 	public static String LoadData(String fileName) {
 		BufferedReader fileStream = null;
 		try {
