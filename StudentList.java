@@ -21,7 +21,7 @@ public class StudentList {
 			System.out.println("Loading data ...");
 
 			try {
-				String words[] = fileContents.split(",");
+				String words[] = fileContents.split(obj.StudentEntryDelimiter);
 				for (String word : words) {
 					System.out.println(word);
 				}
@@ -38,7 +38,7 @@ public class StudentList {
 			System.out.println("Loading data ...");
 
 			try {
-				String words[] = fileContents.split(",");
+				String words[] = fileContents.split(obj.StudentEntryDelimiter);
 				Random random = new Random();
 				int randomIndex = random.nextInt(0, words.length);
 				System.out.println(words[randomIndex]);
@@ -75,21 +75,24 @@ public class StudentList {
 
 			System.out.println("Loading data ...");
 
-			try {
-				String words[] = fileContents.split(",");
-				// boolean done = false;
-				String argValue = args[0].substring(1);
+			String[] words = fileContents.split(obj.StudentEntryDelimiter);
+			String argValue = args[0].substring(1);
+			int indexLocation = -1;
 
-				int indexLocation = -1;
-				for (int idx = 0; idx < words.length; idx++) {
-					if (words[idx].trim().equals(argValue)) {
-						indexLocation = idx;
-						break;
-					}
+			for (int idx = 0; idx < words.length; idx++) {
+				if (words[idx].trim().equals(argValue)) {
+					indexLocation = idx;
+					break;
 				}
+			}
 
-			} catch (Exception e) {
+			if (indexLocation >= 0) {
+				System.out.println(String.format("ArgValue =  %s is exist, We found it", argValue));
+			}
 
+			else {
+
+				System.out.println(String.format("ArgValue =  %s is not exist, Not Found", argValue));
 			}
 
 			System.out.println("Data Loaded.");
