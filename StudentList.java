@@ -6,7 +6,7 @@ public class StudentList {
 	public static void main(String[] args) {
 
 		if (args == null || args[0].length() != 1) {
-			System.out.println("Please provide a, r, ?, +, or c");
+			ShowUsage();
 			return;
 		}
 
@@ -114,6 +114,10 @@ public class StudentList {
 			System.out.println("Data Loaded.");
 
 		}
+
+		else {
+			ShowUsage();
+		}
 	}
 
 	// Refactors duplicate file
@@ -133,6 +137,10 @@ public class StudentList {
 			throw new RuntimeException(e);
 		}
 		return reader;
+	}
+
+	static void ShowUsage() {
+		System.out.println("Please provide a, r, ?, + or c as argument");
 	}
 
 }
