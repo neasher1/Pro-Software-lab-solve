@@ -1,0 +1,22 @@
+Repo first time
+--------
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/neasher1/das.git
+git push -u origin main
+
+
+Branching
+------
+git branch
+git branch Task1
+git checkout Task1
+git add .
+git push --set-upstream origin Task1
+
+Merge
+-----
+git checkout main
+git merge b1
